@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>carre rouge</title>
+
+		<script>
+		
+			var position=0;
+			var nb;
+			var timelate=0;
+			function changer() {
+				for (nb=1;nb<=10;nb++) {
+					(function(nb){
+						setTimeout(function() {
+							setInterval(function() {deplacement(nb);}, 100);
+						}, timelate)
+					}) (nb);
+					timelate+=1000;
+				}
+			}
+			
+			function deplacement(num) {
+				if (num===1) {
+					position+=10;
+				}
+				document.getElementById("carre"+num).style.left=position-(num-1)*100+"px";
+			}
+			
+		</script>
+				
+		<style>
+			.carre {
+				background-color:red;
+				position:relative;
+				height:60px;
+				width:60px;
+				margin:10px;
+			}
+		</style>
+		
+	</head>
+
+	<body onload="setTimeout(changer,4000)">
+		<div id="carre1" class="carre"></div>
+		<div id="carre2" class="carre"></div>
+		<div id="carre3" class="carre"></div>
+		<div id="carre4" class="carre"></div>
+		<div id="carre5" class="carre"></div>
+		<div id="carre6" class="carre"></div>
+		<div id="carre7" class="carre"></div>
+		<div id="carre8" class="carre"></div>
+		<div id="carre9" class="carre"></div>
+		<div id="carre10" class="carre"></div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>carre rouge</title>
+		<script>
+			var move=0;
+			function changer() {
+				setInterval(deplacer, 100);
+			}
+			function deplacer() {
+				move+=10;
+				document.getElementById("carre").style.left=move+"px";
+			}	
+		</script>
+		<style>
+			#carre {
+				background-color:red;
+				position:relative;
+				height:100px;
+				width:100px;
+				margin:10px;
+			}
+		</style>
+	</head>
+	<body onload="setTimeout(changer, 2000);">
+		<div id="carre"></div>
+	</body>
+</html>
